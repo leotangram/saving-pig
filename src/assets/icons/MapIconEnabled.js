@@ -1,11 +1,11 @@
 import React from 'react'
 
-function MapIconEnabled() {
+function MapIconEnabled({ size = 512 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="512"
-      height="512"
+      width={size}
+      height={size}
       viewBox="0 0 64 64"
     >
       <path

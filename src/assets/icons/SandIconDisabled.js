@@ -1,11 +1,11 @@
 import React from 'react'
 
-function SandIconDisabled() {
+function SandIconDisabled({ size = 512 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="512"
-      height="512"
+      width={size}
+      height={size}
       viewBox="0 0 60 60"
     >
       <g fill="none" fillRule="evenodd">

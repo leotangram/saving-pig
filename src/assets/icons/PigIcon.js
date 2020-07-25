@@ -1,9 +1,10 @@
 import React from 'react'
 
-function PigIcon() {
+function PigIcon({ size = 512 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={size}
       x="0"
       y="0"
       enableBackground="new 0 0 512 512"
