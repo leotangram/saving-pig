@@ -1,0 +1,9 @@
+.step {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+
+  &--principal {
+    z-index: 1;
+  }
+}
