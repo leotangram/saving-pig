@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './ProgressBar.scss'
 import PigIcon from '../../assets/icons/PigIcon'
 import MapIconDisabled from '../../assets/icons/MapIconDisabled'
@@ -9,30 +10,43 @@ import GreatestTreasureIconDisabled from '../../assets/icons/GreatestTreasureIco
 import GreatestTreasureIconEnabled from '../../assets/icons/GreatestTreasureIconEnabled'
 import Step from '../step/Step'
 
-const ProgressBar = () => {
+const ProgressBar = ({ totalAmount, goal }) => {
+  const percentage = (100 * totalAmount()) / Number(goal)
+
   const steps = [
     {
       id: 'pig',
       step: <PigIcon size={35} />,
-      value: 0
+      value: percentage
     },
     {
       id: 'firstStep',
-      step: '' ? <MapIconDisabled size={35} /> : <MapIconEnabled size={35} />,
+      step:
+        percentage < 25 ? (
+          <MapIconDisabled size={35} />
+        ) : (
+          <MapIconEnabled size={35} />
+        ),
       value: 25
     },
     {
       id: 'secondStep',
-      step: '' ? <SandIconDisabled size={35} /> : <SandIconEnabled size={35} />,
+      step:
+        percentage < 50 ? (
+          <SandIconDisabled size={35} />
+        ) : (
+          <SandIconEnabled size={35} />
+        ),
       value: 50
     },
     {
       id: 'thirdStep',
-      step: '' ? (
-        <GreatestTreasureIconDisabled size={35} />
-      ) : (
-        <GreatestTreasureIconEnabled size={35} />
-      ),
+      step:
+        percentage < 75 ? (
+          <GreatestTreasureIconDisabled size={35} />
+        ) : (
+          <GreatestTreasureIconEnabled size={35} />
+        ),
       value: 75
     }
   ]
@@ -48,6 +62,11 @@ const ProgressBar = () => {
       </div>
     </div>
   )
+}
+
+ProgressBar.propTypes = {
+  totalAmount: PropTypes.func.isRequired,
+  goal: PropTypes.number.isRequired
 }
 
 export default ProgressBar

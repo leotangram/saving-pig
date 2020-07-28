@@ -1,72 +1,47 @@
 {
   "goal": {
-    "amount": "45"
+    "amount": "2400"
   },
   "values": [
     {
-      "amount": 3000,
+      "amount": "35",
       "type": "income",
       "id": 1
     },
     {
-      "amount": "350",
-      "type": "",
+      "amount": "27",
+      "type": "expenses",
       "id": 2
     },
     {
-      "amount": 0,
-      "type": "",
+      "amount": "456",
+      "type": "income",
       "id": 3
     },
     {
-      "amount": 0,
-      "type": "",
+      "amount": "20",
+      "type": "expenses",
       "id": 4
     },
     {
-      "amount": "20",
-      "type": "income",
+      "amount": "45",
+      "type": "expenses",
       "id": 5
     },
     {
-      "amount": 0,
-      "type": "",
+      "amount": "12",
+      "type": "expenses",
       "id": 6
     },
     {
-      "amount": 0,
-      "type": "expenses",
+      "amount": "46",
+      "type": "income",
       "id": 7
     },
     {
-      "amount": "35",
+      "amount": "87",
       "type": "income",
       "id": 8
-    },
-    {
-      "amount": 0,
-      "type": "",
-      "id": 9
-    },
-    {
-      "amount": "35",
-      "type": "",
-      "id": 10
-    },
-    {
-      "amount": "35",
-      "type": "income",
-      "id": 11
-    },
-    {
-      "amount": "30000",
-      "type": "income",
-      "id": 12
-    },
-    {
-      "amount": "123",
-      "type": "income",
-      "id": 13
     }
   ]
 }

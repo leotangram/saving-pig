@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useForm } from '../../hooks/useForm'
 import { addData } from '../../services/services'
 
-const GoalForm = ({ setGoal }) => {
+const GoalForm = ({ getGoal }) => {
   const [{ amount }, handleInputChange, reset] = useForm({
     amount: ''
   })
@@ -11,7 +11,7 @@ const GoalForm = ({ setGoal }) => {
   const handleSubmit = async e => {
     e.preventDefault()
     addData({ amount }, 'goal')
-    setGoal(amount)
+    getGoal()
     reset()
   }
 
@@ -40,7 +40,7 @@ const GoalForm = ({ setGoal }) => {
 }
 
 GoalForm.propTypes = {
-  setGoal: PropTypes.func.isRequired
+  getGoal: PropTypes.func.isRequired
 }
 
 export default GoalForm
