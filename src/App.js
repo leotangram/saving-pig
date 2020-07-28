@@ -4,6 +4,7 @@ import { getData } from './services/services'
 import { GOAL } from './constants/dataService'
 import ProgressBar from './components/progress-bar/ProgressBar'
 import GoalForm from './components/goal-form/GoalForm'
+import ValueForm from './components/value-form/ValueForm'
 
 function App() {
   const [goal, setGoal] = useState(0)
@@ -23,6 +24,7 @@ function App() {
       <h3>Meta a alcanzar: {goal}</h3>
       <GoalForm setGoal={setGoal} />
       <ProgressBar />
+      <ValueForm />
     </div>
   )
 }

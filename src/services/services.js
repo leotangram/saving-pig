@@ -15,12 +15,10 @@ export const getData = async endPoint => {
   }
 }
 
-export const updateData = async (data, endPoint) => {
+export const addData = async (data, endPoint) => {
   try {
     await instance.post(`/${endPoint}`, data)
   } catch (error) {
     console.log('error', error)
   }
 }
-
-export const createData = () => {}
