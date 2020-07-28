@@ -1,6 +1,6 @@
 {
   "goal": {
-    "amount": "35"
+    "amount": "45"
   },
   "values": [
     {
@@ -62,6 +62,11 @@
       "amount": "30000",
       "type": "income",
       "id": 12
+    },
+    {
+      "amount": "123",
+      "type": "income",
+      "id": 13
     }
   ]
 }

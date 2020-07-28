@@ -8,7 +8,6 @@ const instance = axios.create({
 export const getData = async endPoint => {
   try {
     const { data } = await instance.get(`/${endPoint}`)
-    console.log(data)
     return data
   } catch (error) {
     console.log('error:', error)

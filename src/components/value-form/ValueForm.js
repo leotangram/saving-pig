@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useForm } from '../../hooks/useForm'
 import { addData } from '../../services/services'
 
-const ValueForm = props => {
+const ValueForm = ({ setValue }) => {
   const [{ amount, type }, handleInputChange, reset] = useForm({
     amount: '',
     type: ''
