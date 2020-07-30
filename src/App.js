@@ -30,7 +30,7 @@ function App() {
   }
 
   const totalAmount = () => {
-    if (values?.length === 0) return
+    if (values?.length === 0) return 0
     const amountsIncomes = values
       .filter(({ amount, type }) => type === INCOME && amount)
       .map(value => Number(value.amount))
@@ -38,8 +38,8 @@ function App() {
       .filter(({ amount, type }) => type === EXPENSES && amount)
       .map(value => Number(value.amount))
     return (
-      amountsIncomes.reduce((a, b) => a + b) -
-      amountsExpenses.reduce((a, b) => a + b)
+      (amountsIncomes.length > 0 ? amountsIncomes.reduce((a, b) => a + b) : 0) -
+      (amountsExpenses.length > 0 ? amountsExpenses.reduce((a, b) => a + b) : 0)
     )
   }
 
@@ -48,7 +48,7 @@ function App() {
       <h1>Barra de progreso</h1>
       <h3>Meta a alcanzar: {goal}</h3>
       <GoalForm getGoal={getGoal} />
-      <ProgressBar totalAmount={totalAmount} goal={goal} />
+      <ProgressBar totalAmount={totalAmount()} goal={goal} />
       <ValueForm getValues={getValues} />
       <Values values={values} />
     </div>

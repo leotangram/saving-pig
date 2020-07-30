@@ -10,14 +10,14 @@ import GreatestTreasureIconDisabled from '../../assets/icons/GreatestTreasureIco
 import GreatestTreasureIconEnabled from '../../assets/icons/GreatestTreasureIconEnabled'
 import Step from '../step/Step'
 
-const ProgressBar = ({ totalAmount, goal }) => {
-  const percentage = (100 * totalAmount()) / Number(goal)
+const ProgressBar = ({ totalAmount = 0, goal }) => {
+  const percentage = (100 * totalAmount) / Number(goal)
 
   const steps = [
     {
       id: 'pig',
       step: <PigIcon size={35} />,
-      value: percentage
+      value: percentage < 10 ? 10 : percentage
     },
     {
       id: 'firstStep',
@@ -65,7 +65,7 @@ const ProgressBar = ({ totalAmount, goal }) => {
 }
 
 ProgressBar.propTypes = {
-  totalAmount: PropTypes.func.isRequired,
+  totalAmount: PropTypes.number.isRequired,
   goal: PropTypes.number.isRequired
 }
 
